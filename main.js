@@ -131,17 +131,17 @@
 // //  for (let i = 0; i < colors.length; i++) {
 // //   console.log(colors[i]);
 // //  }
-// //  let book = {
-// //     "main title": "JavaScript",          // These property names include spaces,
-// //     "sub-title": "The Definitive Guide", // and hyphens, so use string literals.
-// //     for: "all audiences",                // for is reserved, but no quotes.
-// //     author: {                            // The value of this property is
-// //         firstname: "David",              // itself an object.
-// //         surname: "Flanagan"
-// //     }
-// // };
-// // //console.log(book);
-// // console.log(book.author);
+ let book = {
+    "main title": "JavaScript",          // These property names include spaces,
+    "sub-title": "The Definitive Guide", // and hyphens, so use string literals.
+    for: "all audiences",                // for is reserved, but no quotes.
+    author: {                            // The value of this property is
+        firstname: "David",              // itself an object.
+        surname: "Flanagan"
+    }
+};
+//console.log(book);
+console.log(book.author);
 
 
 // // let square = {
