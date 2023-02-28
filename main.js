@@ -131,7 +131,7 @@
 // //  for (let i = 0; i < colors.length; i++) {
 // //   console.log(colors[i]);
 // //  }
- let book = {
+let book = {
     "main title": "JavaScript",          // These property names include spaces,
     "sub-title": "The Definitive Guide", // and hyphens, so use string literals.
     for: "all audiences",                // for is reserved, but no quotes.
@@ -147,28 +147,106 @@ console.log(book.author);
 // // let square = {
 
 // //     area: function() {
-        
+
 // //          return this.side * this.side; },
 // //          side: 10.50050
-    
+
 // // };
 // // console.log(square.area()) // => 100
 
+let p1 = "Hello this is jack Saprrow, i am caption of my ship, but i don't have ship so am i caption or not?"
+// vowel 
 
-let letters = ["H","e","l","l","o", "w","o","r","l","d"];
+// an elephant 
+// an Elephant
+
+
+let letters = p1.split('');
 let vowels = "";
-for(let i = 0; i < letters.length; i++) { // For each index in the array
+for (let i = 0; i < letters.length; i++) { // For each index in the array
     let letter = letters[i];              // Get the element at that index
     if (/[aeiou]/.test(letter)) {         // Use a regular expression test
         vowels += letter;                 // If it is a vowel, remember it
     }
 }
-console.log(vowels, letters.length);  
+console.log(vowels, letters.length);
 
 let scope = "global scope";          // A global variable
 function Checkscope() {
-   // let scope = "local scope";       // A local variable
+    // let scope = "local scope";       // A local variable
     function f() { return scope; }   // Return the value in scope here
     return f();
 }
-console.log( Checkscope() )  ;
+
+
+
+
+
+console.log(Checkscope());
+
+
+// function operation value1 value 2
+
+function operation(v1, v2) {
+    console.log(v1 + v2);
+
+
+}
+operation(10, 20);
+
+const op = (x, y) => {
+    return x + y
+
+}
+
+
+console.log("Hello ==>", op(1, 2))
+
+// fun oper val1 val2
+
+const Operations = {
+    Add: 'Addition',
+    Sub: 'Sub',
+    Mul: 'Mul',
+    Div: 'Div'
+};
+
+const myCal = (op, val1, val2) => {
+    console.log("Opp =>", op)
+    console.log("Comparison ", Operations.Add)
+
+    let result = 0
+
+    switch (op) {
+        case Operations.Add:
+            result = val1 + val2
+            break;
+
+        default:
+            break;
+    }
+    return result;
+
+}
+
+console.log(myCal(Operations.Add, 20, 10))
+
+let scope1 = "global scope";          // A global variable
+function checkscope() {
+    let scope1 = "local scope";       // A local variable
+    function f() { return scope1 + "Hello Jack"; }   // Return the value in scope here
+    return f;
+}
+let s = checkscope();
+
+
+
+const hello = () => {
+    const hello = () => 2 + 5;
+    return hello
+}
+
+
+console.log("Test sum ==>", hello()())
+hello()()
+
