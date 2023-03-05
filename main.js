@@ -164,4 +164,15 @@ function factorial(n) {
 }
 console.log(factorial(5));
 
-//function that generates all combinations of a string.
+//random id generate
+function makeid(l){
+    let text="";
+    let list= "ABCDEFGHIJKLMNPQRSTUVWXYZ";
+    for (let i=0;i<l;i++){
+        //text++;
+        text = list.charAt( (Math.random() * list.length)) + text;
+        
+    }
+    console.log(text);
+}
+makeid(8);
