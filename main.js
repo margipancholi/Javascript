@@ -63,4 +63,41 @@ console.log(car10.drive());
 console.log(car20.break());
 console.log(car20.whatisthis()); //this keyword reference to the current object that we are working with
 
+// super vs extend
+//super-> used for to inherit method (as object) and for inherit property or constroctor (as function)
+// extend -> only used for to inherit child from parent class
+// A trivial Array subclass that adds getters for the first and last elements.
+class EZArray extends Array {
+    get first() { return this[0]; }
+    get last() { return this[this.length-1]; }
+}
 
+let a = new EZArray();
+a instanceof EZArray  // => true: a is subclass instance
+a instanceof Array    // => true: a is also a superclass instance.
+console.log(a.push(1,2,3,4));      // a.length == 4; we can use inherited methods
+console.log (a.pop() );              // => 4: another inherited method
+console.log( a.first );              // => 1: first getter defined by subclass
+console.log( a.last);                // => 3: last getter defined by subclass
+console.log (a[1] );                 // => 2: regular array access syntax still works.Array.isArray(a)      // => true: subclass instance really is an array
+console.log( EZArray.isArray(a) );   // => true: subclass inherits static methods, too!
+
+//static
+class Bike{
+    static noofBikes = 0; //belongs to class
+    static race(){
+        console.log("On the race");
+    };
+    constructor (model,color){
+        this.model = model;
+        this.color = color;
+        Bike.noofBikes += 1;
+    };
+}
+let bike1 = new Bike ("ASDF12","black");
+let bike2 = new Bike ("ASDF22","blue");
+
+
+console.log(bike1.model); 
+console.log(Bike.noofBikes);
+console.log(Bike.race());
