@@ -112,19 +112,19 @@ console.log(Math.max(52, 25, 10, 111, 258, 40, 50, 12, 78, 100));
 console.log(Math.min(52, 25, 10, 111, 258, 40, 50, 12, 78, 100));
 
 //palindrome or not 
-function check_palindrome(str){ //madam
+function check_palindrome(str) { //madam
     // count total length
     let len = str.length; //madam = 5 
     //divide by 2
-       for(let i = 0 ; i < (len/ 2); i++){ //len / 2
-      if ( str[i] == str[i].len-1-i ) {  //if firchar == lastchar then true
-    //  let str2 = str[i].len-1-i;
-       return;
-       } else{
-        console.log(" its not palindrome ");
-        
-       }
-}
+    for (let i = 0; i < (len / 2); i++) { //len / 2
+        if (str[i] == str[i].len - 1 - i) {  //if firchar == lastchar then true
+            //  let str2 = str[i].len-1-i;
+            return;
+        } else {
+            console.log(" its not palindrome ");
+
+        }
+    }
 }
 check_palindrome('madam');
 
@@ -142,16 +142,16 @@ function counter(n) {  // Function argument n is the private variable
 }
 
 let c = counter(1111000);
-console.log(c.count   )         // => 1000
+console.log(c.count)         // => 1000
 //constructor
 // function Person() {
-    
+
 // }
 // can create multiple objects
 // let Person1 = new Person();
 
-let biggest = Math.max.apply(Math, [1,45,20]);
-let smallest = Math.min.call(Math, (1,45,20));
+let biggest = Math.max.apply(Math, [1, 45, 20]);
+let smallest = Math.min.call(Math, (1, 45, 20));
 console.log(biggest);
 console.log(smallest);
 
@@ -160,19 +160,44 @@ console.log(f);
 
 
 function factorial(n) {
-    return (n <= 1) ? 1 : n * factorial(n-1);
+    return (n <= 1) ? 1 : n * factorial(n - 1);
 }
 console.log(factorial(5));
 
 //random id generate
-function makeid(l){
-    let text="";
-    let list= "ABCDEFGHIJKLMNPQRSTUVWXYZ";
-    for (let i=0;i<l;i++){
+function makeid(l) {
+    let text = "";
+    let list = "0123456789*.@#ABCDEFGHIJKLMNPQRSTUVWXYZ";
+    for (let i = 0; i < l; i++) {
         //text++;
-        text = list.charAt( (Math.random() * list.length)) + text;
-        
+        text = list.charAt((Math.random() * list.length)) + text;
+
     }
-    console.log(text);
+    return text;
 }
-makeid(8);
+console.log(makeid(8));
+
+//prime or not
+
+function check_prime(n) { // number % 2 == 0 false
+    for (let i = 1; i < n; i++) {
+
+        if (n == 1) {
+            return true;
+        } else if (n == 2) {
+            return true;
+        } else if (n % 2 == 0) {
+            console.log("not a prime , morethan two factors", n);
+            return false;
+        } else {
+            console.log("its a prime ", n);
+            return true;
+        }
+    }
+
+    return true;
+}
+console.log(check_prime(13));
+
+
+
